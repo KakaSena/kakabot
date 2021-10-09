@@ -10,9 +10,10 @@ bot = telebot.TeleBot(os.environ.get('BOT_TOKEN'))
 
 @bot.message_handler(commands=['start'])
 def test(message):
-    bot.send_message(message.chat.id, 'welcome to kakabot')
+    chat_id = message.chat.id
+    bot.send_message(chat_id, 'welcome to kakabot')
     video = open('utils/yoshi.mp4', 'rb')
-    bot.send_video(message.chat.id, video)
+    bot.send_video(chat_id, video)
     audio = open('utils/yoshi-audio.mp3', 'rb')
     bot.send_audio(chat_id, audio)
 
