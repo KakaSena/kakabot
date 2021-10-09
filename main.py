@@ -15,7 +15,6 @@ def test(message):
     bot.send_video(message.chat.id, video)
     audio = open('utils/yoshi-audio.mp3', 'rb')
     bot.send_audio(chat_id, audio)
-    bot.send_audio(chat_id, "FILEID")
 
 
 @bot.message_handler(commands=['koala'])
