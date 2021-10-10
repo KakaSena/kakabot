@@ -18,7 +18,7 @@ python3 main.py
 
 ---------------------------------------
 
-###Available commands
+### Available commands
 
 <ul>
 <li>Start: returns welcome message.</li>
