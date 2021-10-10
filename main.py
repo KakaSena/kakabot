@@ -24,6 +24,12 @@ def fox(message):
     chat_id = message.chat.id
     bot.send_photo(chat_id, url)
 
+@bot.message_handler(commands=['bop'])
+def bop(message):
+    url = get_image_url('https://random.dog/woof.json','url')
+    chat_id = message.chat.id
+    bot.send_photo(chat_id,url)
+
 
 @bot.message_handler(commands=["ping"])
 def on_ping(message):
