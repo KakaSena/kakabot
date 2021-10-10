@@ -24,9 +24,14 @@ def fox(message):
     chat_id = message.chat.id
     bot.send_photo(chat_id, url)
 
+
+@bot.message_handler(commands=["ping"])
+def on_ping(message):
+    bot.reply_to(message, "Still alive and kicking!")
+
+
+
 # Auxiliary methods
-
-
 def get_url(url, key):
     contents = requests.get(url).json()
     url = contents[key]
