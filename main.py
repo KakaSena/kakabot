@@ -51,7 +51,7 @@ def destroy(message):
 
 @bot.message_handler(commands=['meme'])
 def bop(meme):
-    url = get_image_url('https://some-random-api.ml/meme.json','url')
+    url = get_image_url('https://some-random-api.ml/meme.json','image')
     chat_id = message.chat.id
     bot.send_photo(chat_id,url)
 
