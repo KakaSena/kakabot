@@ -18,18 +18,17 @@ def test(message):
     audio = open('utils/yoshi-audio.mp3', 'rb')
     bot.send_audio(chat_id, audio)
 
-
-@bot.message_handler(commands=['koala'])
-def fox(message):
-    url = get_image_url('https://some-random-api.ml/img/koala', 'link')
-    chat_id = message.chat.id
-    bot.send_photo(chat_id, url)
-
 @bot.message_handler(commands=['bop'])
 def bop(message):
     url = get_image_url('https://random.dog/woof.json','url')
     chat_id = message.chat.id
     bot.send_photo(chat_id,url)
+
+@bot.message_handler(commands=['koala'])
+def fox(message):
+    url = get_image_url('https://some-random-api.ml/animal/koala.json', 'image')
+    chat_id = message.chat.id
+    bot.send_photo(chat_id, url)
 
 @bot.message_handler(commands=['pasro'])
 def pasro():
