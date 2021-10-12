@@ -31,6 +31,23 @@ def bop(message):
     chat_id = message.chat.id
     bot.send_photo(chat_id,url)
 
+@bot.message_handler(commands=['pasro'])
+def pasro():
+    url = get_image_url('https://some-random-api.ml/animal/birb.json','image')
+    chat_id = message.chat.id
+    bot.send_photo(chat_id,url)
+
+@bot.message_handler(commands=['cangru'])
+def cangru():
+    url = get_image_url('https://some-random-api.ml/animal/kangaroo.json','image')
+    chat_id = message.chat.id
+    bot.send_photo(chat_id,url)
+
+@bot.message_handler(commands=['cangru'])
+def cangru():
+    url = get_image_url('https://some-random-api.ml/animal/red_panda.json','image')
+    chat_id = message.chat.id
+    bot.send_photo(chat_id,url)
 
 @bot.message_handler(commands=["ping"])
 def on_ping(message):
