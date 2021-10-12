@@ -9,6 +9,7 @@ bot = telebot.TeleBot(os.environ.get('BOT_TOKEN'))
 
 
 @bot.message_handler(commands=['start'])
+
 def test(message):
     chat_id = message.chat.id
     bot.send_message(chat_id, 'welcome to kakabot')
@@ -35,6 +36,24 @@ def bop(message):
 def on_ping(message):
     bot.reply_to(message, "Still alive and kicking!")
 
+
+#Forbidden Commands - By Ja1
+
+@bot.message_handler(commands=["destroy"])
+def destroy(message):
+    for x in range(42):
+        chat_id = message.chat.id
+        bot.send_message(chat_id, 'welcome to kakabot')
+        video = open('utils/yoshi.mp4', 'rb')
+        bot.send_video(chat_id, video)
+        audio = open('utils/yoshi-audio.mp3', 'rb')
+        bot.send_audio(chat_id, audio)
+
+@bot.message_handler(commands=['meme'])
+def bop(meme):
+    url = get_image_url('https://some-random-api.ml/meme.json','url')
+    chat_id = message.chat.id
+    bot.send_photo(chat_id,url)
 
 
 # Auxiliary methods
