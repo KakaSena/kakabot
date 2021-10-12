@@ -25,7 +25,7 @@ def bop(message):
     bot.send_photo(chat_id,url)
 
 @bot.message_handler(commands=['koala'])
-def fox(message):
+def koala(message):
     url = get_image_url('https://some-random-api.ml/animal/koala.json', 'image')
     chat_id = message.chat.id
     bot.send_photo(chat_id, url)
@@ -42,11 +42,15 @@ def cangru():
     chat_id = message.chat.id
     bot.send_photo(chat_id,url)
 
-@bot.message_handler(commands=['cangru'])
-def cangru():
+@bot.message_handler(commands=['pandimvermei'])
+def pandimvermei():
     url = get_image_url('https://some-random-api.ml/animal/red_panda.json','image')
     chat_id = message.chat.id
     bot.send_photo(chat_id,url)
+
+@bot.message_handler(commands=["help"])
+def help(message):
+    bot.reply_to(message, "Start: returns welcome message. \n Koala: returns random koala picture. \n Meme: returns a meme. \n Pandimvermei: returns random red panda. \n Cangru: returns a random kangaroo.\n Pasro: returns random birb.")
 
 @bot.message_handler(commands=["ping"])
 def on_ping(message):
