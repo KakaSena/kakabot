@@ -84,7 +84,7 @@ def command_help(message):
                      "🐼 /panda - random panda image\n"
                      "🦊 /fox - random fox image\n"
                      "🦝 /raccoon - random raccoon image\n"
-                     "🐦 /bird - random bird image"
+                     "🐦 /bird - random bird image\n"
                      "😜 /meme - random meme image\n")
 
 
