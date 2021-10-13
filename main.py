@@ -76,7 +76,7 @@ def fox(message):
 
 @bot.message_handler(commands=['help'])
 def command_help(message):
-    bot.send_message(message.chat.id, "🤖 /start - welmcome message\n"
+    bot.send_message(message.chat.id, "🤖 /start - welcome message\n"
                      "🐨 /koala - random koala image\n"
                      "🐶 /bop - random dog image\n"
                      "🐱 /cat - random cat image\n"
