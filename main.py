@@ -9,7 +9,6 @@ bot = telebot.TeleBot(os.environ.get('BOT_TOKEN'))
 
 
 @bot.message_handler(commands=['start'])
-
 def test(message):
     chat_id = message.chat.id
     bot.send_message(chat_id, 'welcome to kakabot')
@@ -18,46 +17,83 @@ def test(message):
     audio = open('utils/yoshi-audio.mp3', 'rb')
     bot.send_audio(chat_id, audio)
 
+
 @bot.message_handler(commands=['bop'])
 def bop(message):
-    url = get_image_url('https://random.dog/woof.json','url')
-    chat_id = message.chat.id
-    bot.send_photo(chat_id,url)
-
-@bot.message_handler(commands=['koala'])
-def koala(message):
-    url = get_image_url('https://some-random-api.ml/animal/koala.json', 'image')
+    url = get_image_url('https://some-random-api.ml/animal/dog', 'image')
     chat_id = message.chat.id
     bot.send_photo(chat_id, url)
 
-@bot.message_handler(commands=['pasro'])
-def pasro():
-    url = get_image_url('https://some-random-api.ml/animal/birb.json','image')
-    chat_id = message.chat.id
-    bot.send_photo(chat_id,url)
 
-@bot.message_handler(commands=['cangru'])
-def cangru():
-    url = get_image_url('https://some-random-api.ml/animal/kangaroo.json','image')
+@bot.message_handler(commands=['cat'])
+def cat(message):
+    url = get_image_url('https://some-random-api.ml/animal/cat', 'image')
     chat_id = message.chat.id
-    bot.send_photo(chat_id,url)
+    bot.send_photo(chat_id, url)
 
-@bot.message_handler(commands=['pandimvermei'])
-def pandimvermei():
-    url = get_image_url('https://some-random-api.ml/animal/red_panda.json','image')
+
+@bot.message_handler(commands=['koala'])
+def koala(message):
+    url = get_image_url('https://some-random-api.ml/img/koala', 'link')
     chat_id = message.chat.id
-    bot.send_photo(chat_id,url)
+    bot.send_photo(chat_id, url)
 
-@bot.message_handler(commands=["help"])
-def help(message):
-    bot.reply_to(message, "Start: returns welcome message. \n Koala: returns random koala picture. \n Meme: returns a meme. \n Pandimvermei: returns random red panda. \n Cangru: returns a random kangaroo.\n Pasro: returns random birb.")
+
+@bot.message_handler(commands=['bird'])
+def bird(message):
+    url = get_image_url('https://some-random-api.ml/animal/birb', 'image')
+    chat_id = message.chat.id
+    bot.send_photo(chat_id, url)
+
+
+@bot.message_handler(commands=['kangaroo'])
+def kangaroo(message):
+    url = get_image_url('https://some-random-api.ml/animal/kangaroo', 'image')
+    chat_id = message.chat.id
+    bot.send_photo(chat_id, url)
+
+
+@bot.message_handler(commands=['panda'])
+def panda(message):
+    url = get_image_url('https://some-random-api.ml/animal/red_panda', 'image')
+    chat_id = message.chat.id
+    bot.send_photo(chat_id, url)
+
+
+@bot.message_handler(commands=['raccoon'])
+def raccoon(message):
+    url = get_image_url('https://some-random-api.ml/animal/raccoon', 'image')
+    chat_id = message.chat.id
+    bot.send_photo(chat_id, url)
+
+
+@bot.message_handler(commands=['fox'])
+def fox(message):
+    url = get_image_url('https://some-random-api.ml/animal/fox', 'image')
+    chat_id = message.chat.id
+    bot.send_photo(chat_id, url)
+
+
+@bot.message_handler(commands=['help'])
+def command_help(message):
+    bot.send_message(message.chat.id, "🤖 /start - welmcome message\n"
+                     "🐨 /koala - random koala image\n"
+                     "🐶 /bop - random dog image\n"
+                     "🐱 /cat - random cat image\n"
+                     "🦘 /kangaroo - random kangaroo image\n"
+                     "🐼 /panda - random panda image\n"
+                     "🦊 /fox - random fox image\n"
+                     "🦝 /raccoon - random raccoon image\n"
+                     "🐦 /bird - random bird image"
+                     "😜 /meme - random meme image\n")
+
 
 @bot.message_handler(commands=["ping"])
 def on_ping(message):
     bot.reply_to(message, "Still alive and kicking!")
 
 
-#Forbidden Commands - By Ja1
+# Forbidden Commands - By Ja1
 
 @bot.message_handler(commands=["destroy"])
 def destroy(message):
@@ -69,11 +105,12 @@ def destroy(message):
         audio = open('utils/yoshi-audio.mp3', 'rb')
         bot.send_audio(chat_id, audio)
 
+
 @bot.message_handler(commands=['meme'])
-def bop(meme):
-    url = get_image_url('https://some-random-api.ml/meme.json','image')
+def bop(message):
+    url = get_image_url('https://some-random-api.ml/meme', 'image')
     chat_id = message.chat.id
-    bot.send_photo(chat_id,url)
+    bot.send_photo(chat_id, url)
 
 
 # Auxiliary methods
