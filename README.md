@@ -15,6 +15,12 @@ Run the program.
 ```
 python3 main.py
 ```
+---------------------------------------
+## Run Locally  
+- 1 - Create a new bot with [@BotFather](https://telegram.me/BotFather) and acquire the bot token . 
+- 2 - Create a file named .env with the following environment variable:  ````BOT_TOKEN=yourtoken````. 
+- 3 - Install the dependencies using the command:  ````pip3 install -r requirements.txt````
+- 4 - Run ````python main.exe````. Open the bot created in the telegram and just execute the commands! 
 
 ---------------------------------------
 
