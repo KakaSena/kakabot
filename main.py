@@ -74,6 +74,15 @@ def fox(message):
     url = get_image_url('https://some-random-api.ml/animal/fox', 'image')
     chat_id = message.chat.id
     bot.send_photo(chat_id, url)
+    
+@bot.message_handler(commands=['catus'])
+def catus(message):
+    messageText = message.text.replace("/catus", "")
+    if not messageText: 
+        messageText = "404"
+        bot.send_message(message.chat.id, "Mande por exemplo catus 500")
+    url = "https://http.cat/"+ messageText.strip() +".jpg"
+    bot.send_photo(message.chat.id, url)    
 
 
 @bot.message_handler(commands=['help'])
@@ -87,7 +96,8 @@ def command_help(message):
                      "🦊 /fox - random fox image\n"
                      "🦝 /raccoon - random raccoon image\n"
                      "🐦 /bird - random bird image\n"
-                     "😜 /meme - random meme image\n")
+                     "😜 /meme - random meme image\n"
+                     "😜 /catus - random http status cat image\n")
 
 
 @bot.message_handler(commands=["ping"])
